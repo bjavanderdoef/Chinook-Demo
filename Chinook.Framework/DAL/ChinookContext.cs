@@ -2,6 +2,7 @@ using Chinook.Framework.Entities;
 using System;
 using System.Data.Entity;
 using System.Linq;
+using System.Data.Entity.
 
 namespace Chinook.Framework.DAL
 {
@@ -10,6 +11,10 @@ namespace Chinook.Framework.DAL
         public ChinookContext()
             : base("name=ChinookDb")
         {
+            // This is an alternative to using the web.config to ensure that Entity Framework 
+            // does NOT create the database if it cannot find the database based on the 
+            // connection string information
+            Database.SetInitializer<ChinookContext>(null);
         }
 
         public virtual DbSet<Album> Albums { get; set; }
