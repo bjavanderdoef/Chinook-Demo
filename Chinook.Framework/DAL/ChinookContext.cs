@@ -1,8 +1,5 @@
 using Chinook.Framework.Entities;
-using System;
 using System.Data.Entity;
-using System.Linq;
-using System.Data.Entity.
 
 namespace Chinook.Framework.DAL
 {

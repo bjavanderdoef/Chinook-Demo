@@ -4,34 +4,12 @@ using Microsoft.Owin.Security;
 using System.Web;
 using System;
 using Website;
+using Chinook.Framework.BLL.Security;
+using Chinook.Framework.Entities.Security;
 
 namespace Website
 {
-    // You can add User data for the user by adding more properties to your User class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
-    public class ApplicationUser : IdentityUser
-    {
-    }
-
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
-    {
-        public ApplicationDbContext()
-            : base("DefaultConnection")
-        {
-        }
-    }
-
     #region Helpers
-    public class UserManager : UserManager<ApplicationUser>
-    {
-        public UserManager()
-            : base(new UserStore<ApplicationUser>(new ApplicationDbContext()))
-        {
-        }
-    }
-}
-
-namespace Website
-{
     public static class IdentityHelper
     {
         // Used for XSRF when linking external logins
