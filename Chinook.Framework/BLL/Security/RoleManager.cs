@@ -43,13 +43,14 @@ namespace Chinook.Framework.BLL.Security
         [DataObjectMethod(DataObjectMethodType.Insert, true)]
         public void AddRole(RoleProfile role)
         {
-
+            if (!this.RoleExists(role.RoleName))
+                this.Create(new IdentityRole(role.RoleName));
         }
 
         [DataObjectMethod(DataObjectMethodType.Delete, true)]
         public void RemoveRole(RoleProfile role)
         {
-
+            this.Delete(this.FindById(role.RoleId));
         }
     }
 }
